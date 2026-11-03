@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sec 2 Unit 1 · Egypt-Africa Cooperation</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;900&family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--primary:#0f766e;--secondary:#14b8a6;--primary-dark:#134e4a;--accent:#f59e0b;--success:#16a34a;--danger:#ef4444;--dark:#0f172a;--light:#f0fdfa;}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Poppins',sans-serif;}
+.ar{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;}
+body{background:radial-gradient(circle at top,#f0fdfa,#99f6e4);color:var(--dark);min-height:100vh;display:flex;flex-direction:column;}
+header{background:linear-gradient(135deg,#042f2e,#115e59 50%,#b45309);color:#fff;padding:22px 32px;display:flex;align-items:center;gap:22px;box-shadow:0 10px 20px rgba(0,0,0,.18);border-bottom:5px solid var(--accent);}
+.logo{width:96px;height:96px;border-radius:24px;background:#fff;border:4px solid var(--accent);display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 8px 20px rgba(0,0,0,.3);}
+.logo i{font-size:3rem;color:var(--primary);}
+.brand{font-weight:800;font-size:2.3rem;color:var(--accent);text-shadow:2px 3px 0 rgba(0,0,0,.35);line-height:1.1;}
+.titles h2{font-size:1.2rem;font-weight:600;color:#ccfbf1;margin-top:4px;}
+.titles h3{font-size:.95rem;font-weight:400;margin-top:8px;background:rgba(0,0,0,.25);padding:5px 14px;border-radius:20px;display:inline-block;}
+.container{max-width:960px;margin:30px auto;padding:16px;flex-grow:1;width:100%;}
+.screen{display:none;background:#fff;border-radius:20px;padding:34px;box-shadow:0 15px 30px rgba(0,0,0,.1);text-align:center;animation:fadeIn .35s ease-out;border:1px solid #ccfbf1;}
+.screen.active{display:block;}
+.screen h2{font-size:1.9rem;color:var(--primary);margin-bottom:8px;}
+.screen>p{font-size:1.05rem;color:#64748b;margin-bottom:18px;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.menu-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:20px;}
+.game-card{background:linear-gradient(135deg,#fff,#f0fdfa);border:2px solid #ccfbf1;border-bottom:6px solid var(--primary);border-radius:20px;padding:24px 16px;cursor:pointer;transition:all .25s cubic-bezier(.175,.885,.32,1.275);display:flex;flex-direction:column;align-items:center;gap:12px;box-shadow:0 6px 12px rgba(0,0,0,.05);}
+.game-card:hover{transform:translateY(-8px);background:linear-gradient(135deg,var(--primary),var(--secondary));color:#fff;border-bottom-color:var(--primary-dark);}
+.game-card h3{font-size:1.2rem;font-weight:600;}
+.game-card .meta{font-size:.82rem;font-weight:400;opacity:.85;}
+.game-card i{font-size:3rem;color:var(--primary);transition:color .25s;}
+.game-card:hover i{color:#fff;}
+.game-card .tag{background:var(--accent);color:#fff;border-radius:10px;padding:2px 10px;font-size:.8rem;font-weight:700;}
+.btn{border:none;padding:12px 22px;border-radius:12px;cursor:pointer;font-size:1.05rem;font-weight:600;display:inline-flex;align-items:center;gap:9px;transition:all .1s;color:#fff;}
+.btn:active{transform:translateY(4px);box-shadow:none!important;}
+.btn-back{background:var(--danger);box-shadow:0 4px 0 #b91c1c;}
+.btn-main{background:var(--primary);box-shadow:0 4px 0 var(--primary-dark);}
+.btn-dark{background:var(--dark);box-shadow:0 4px 0 #000;}
+.top-row{display:flex;justify-content:flex-start;margin-bottom:14px;}
+.chips{display:inline-flex;flex-wrap:wrap;justify-content:center;gap:6px;background:#e2e8f0;border-radius:16px;padding:6px;margin:4px 0 8px;}
+.chip{border:none;background:transparent;padding:10px 18px;border-radius:12px;font-weight:700;font-size:.98rem;cursor:pointer;color:#334155;}
+.chip.on{background:var(--primary);color:#fff;box-shadow:0 3px 8px rgba(15,118,110,.35);}
+.hint{font-size:.95rem;color:#475569;}
+/* game */
+#game-screen.screen{padding:16px;}
+.g-top{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px;}
+.g-top h3{font-size:1.05rem;color:#475569;}
+.panel{border:4px solid var(--primary);border-radius:18px;padding:18px;background:var(--light);position:relative;max-width:880px;margin:0 auto;}
+.p-head{display:flex;justify-content:space-between;align-items:center;background:var(--primary);color:#fff;border-radius:12px;padding:10px 14px;margin-bottom:12px;gap:8px;}
+.p-head .score{font-size:1.35rem;font-weight:800;background:rgba(255,255,255,.22);padding:2px 14px;border-radius:10px;}
+.lives{font-size:1.2rem;letter-spacing:2px;}
+.progress{height:10px;background:#e2e8f0;border-radius:6px;overflow:hidden;margin-bottom:16px;}
+.progress div{height:100%;background:var(--accent);width:0;transition:width .3s;}
+.q-type{display:inline-block;font-size:.8rem;font-weight:700;color:#fff;background:#64748b;border-radius:8px;padding:2px 10px;margin-bottom:10px;}
+.q-type.v{background:#0891b2}.q-type.g{background:#7c3aed}.q-type.w{background:#c2410c}.q-type.r{background:#be185d}
+.question{font-size:1.55rem;font-weight:800;line-height:1.45;margin-bottom:22px;color:var(--dark);}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.options.long{grid-template-columns:1fr;}
+.opt{background:#fff;border:2px solid #e2e8f0;color:var(--dark);padding:16px 12px;border-radius:15px;font-size:1.15rem;font-weight:600;cursor:pointer;box-shadow:0 5px 0 #cbd5e1;transition:all .15s;}
+.opt:hover{border-color:var(--primary);background:#f8fafc;}
+.opt:disabled{cursor:default;}
+.opt.correct{background:var(--success);border-color:var(--success);color:#fff;box-shadow:0 5px 0 #15803d;}
+.opt.wrong{background:var(--danger);border-color:var(--danger);color:#fff;box-shadow:0 5px 0 #b91c1c;}
+.opt.dim{opacity:.55;}
+.challenge .opt{border-radius:30px;border-width:3px;}
+.opt,.bubble,.target{touch-action:manipulation;user-select:none;-webkit-user-select:none;}
+.arena-box{position:relative;border-radius:20px;overflow:hidden;}
+.bubbles{height:420px;background:linear-gradient(to bottom,#99f6e4,#f0fdfa);border:4px solid var(--primary);box-shadow:inset 0 0 20px rgba(0,0,0,.1);}
+.bubble{position:absolute;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.97),rgba(204,251,241,.97));border:2px solid rgba(255,255,255,.7);border-radius:50%;display:flex;justify-content:center;align-items:center;font-weight:800;color:var(--primary-dark);cursor:pointer;box-shadow:0 8px 15px rgba(0,0,0,.12),inset -5px -5px 15px rgba(0,0,0,.1);text-align:center;padding:4px;font-size:.85rem;line-height:1.1;overflow:hidden;word-break:break-word;}
+.bubble:active{transform:scale(.9);}
+.targets{height:380px;background:linear-gradient(135deg,#042f2e,#115e59);border:4px solid var(--accent);box-shadow:inset 0 0 30px rgba(0,0,0,.5);}
+.target{position:absolute;background:radial-gradient(circle,#fff,#fcd34d,#f59e0b);border:4px solid #fff;padding:12px 22px;border-radius:30px;font-weight:800;color:#fff;text-shadow:1px 1px 2px #000;cursor:crosshair;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 15px rgba(0,0,0,.4);white-space:nowrap;}
+/* feedback */
+.feedback{display:none;margin-top:18px;border-radius:16px;padding:16px 18px;text-align:right;direction:rtl;font-family:'Cairo',sans-serif;animation:fadeIn .25s;}
+.feedback.show{display:block;}
+.feedback.ok{background:#dcfce7;border:3px solid var(--success);}
+.feedback.bad{background:#fee2e2;border:3px solid var(--danger);}
+.fb-title{font-size:1.35rem;font-weight:900;margin-bottom:6px;}
+.feedback.ok .fb-title{color:#15803d}.feedback.bad .fb-title{color:#b91c1c}
+.fb-ans{font-size:1.05rem;font-weight:700;margin-bottom:6px;color:var(--dark);}
+.fb-ans span{direction:ltr;unicode-bidi:isolate;font-family:'Poppins',sans-serif;color:#15803d;font-weight:800;}
+.fb-why{font-size:1.05rem;line-height:1.75;color:#1e293b;background:rgba(255,255,255,.7);border-radius:10px;padding:10px 12px;}
+.fb-why b{color:var(--primary-dark);}
+.fb-next{margin-top:12px;display:flex;justify-content:flex-start;}
+/* results */
+.final-score{margin:14px 0;font-size:1.9rem;color:var(--primary);}
+.stars{font-size:2rem;margin-bottom:6px;}
+.results-list{text-align:left;margin-top:16px;max-height:460px;overflow-y:auto;border:2px solid #e2e8f0;padding:14px;border-radius:15px;background:#f8fafc;}
+.mistake{background:#fff;padding:14px;border-left:5px solid var(--danger);margin-bottom:12px;border-radius:10px;box-shadow:0 3px 6px rgba(0,0,0,.05);}
+.mistake .q{font-weight:600;margin-bottom:6px;}
+.mistake .a{color:var(--success);font-weight:800;margin-bottom:6px;}
+.mistake .why{font-family:'Cairo',sans-serif;direction:rtl;text-align:right;color:#334155;font-size:.98rem;line-height:1.7;}
+.actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:22px;}
+footer{background:#042f2e;color:#fff;text-align:center;padding:16px;font-weight:600;margin-top:auto;border-top:4px solid var(--accent);}
+footer span{color:var(--accent);}
+@media (max-width:768px){
+ header{padding:16px;gap:14px;}
+ .logo{width:64px;height:64px;border-radius:16px;}
+ .logo i{font-size:2rem;}
+ .brand{font-size:1.6rem;}
+ .titles h2{font-size:.95rem;}
+ .titles h3{font-size:.8rem;}
+ .container{margin:14px auto;padding:10px;}
+ .screen{padding:22px 14px;}
+ .screen h2{font-size:1.45rem;}
+ .question{font-size:1.2rem;margin-bottom:16px;}
+ .options{grid-template-columns:1fr;gap:10px;}
+ .opt{font-size:1.02rem;padding:13px 10px;}
+ .panel{padding:12px;}
+ .bubbles{height:360px;}
+ .bubble{font-size:.7rem;padding:2px;}
+ .targets{height:320px;}
+ .target{padding:8px 12px;font-size:.75rem;white-space:normal;max-width:46%;line-height:1.15;}
+ .chip{padding:9px 12px;font-size:.9rem;}
+ .fb-title{font-size:1.15rem;}
+ .fb-why,.fb-ans{font-size:.98rem;}
+}
+@media (max-width:420px){.bubbles{height:320px}.bubble{font-size:.62rem}.targets{height:290px}.target{font-size:.68rem}}
+body.playing header{padding:8px 16px;}
+body.playing .logo{width:44px;height:44px;border-radius:12px;border-width:2px;}
+body.playing .logo i{font-size:1.4rem;}
+body.playing .brand{font-size:1.3rem;}
+body.playing .titles h3,body.playing footer{display:none;}
+</style>
+</head>
+<body>
+<header>
+ <div class="logo"><i class="fas fa-earth-africa"></i></div>
+ <div class="titles">
+  <div class="brand">English Games</div>
+  <h2>Sec 2 · First Term · Unit 1</h2>
+  <h3>Egypt-Africa Cooperation</h3>
+ </div>
+</header>
+
+<div class="container">
+ <div id="home" class="screen active">
+  <h2>Unit 1: Egypt-Africa Cooperation</h2>
+  <p>Choose a part of the unit to practise</p>
+  <div class="menu-grid" id="section-grid"></div>
+ </div>
+
+ <div id="menu" class="screen">
+  <div class="top-row"><button class="btn btn-main" onclick="show('home')"><i class="fas fa-arrow-left"></i> All Parts</button></div>
+  <h2 id="menu-title"></h2>
+  <p id="menu-sub" style="margin-bottom:10px"></p>
+  <div class="chips" id="chips"></div>
+  <p class="hint" id="hint"></p>
+  <div class="menu-grid">
+   <div class="game-card" onclick="startGame(1)"><i class="fas fa-list-ul"></i><h3>Multiple Choice</h3><span class="meta">Pick the right answer</span></div>
+   <div class="game-card" onclick="startGame(2)"><i class="fas fa-soap"></i><h3>Falling Bubbles</h3><span class="meta">Pop the correct bubble</span></div>
+   <div class="game-card" onclick="startGame(3)"><i class="fas fa-crosshairs"></i><h3>Target Practice</h3><span class="meta">Hit the moving target</span></div>
+   <div class="game-card" onclick="startGame(4)"><i class="fas fa-check-circle"></i><h3>True or False</h3><span class="meta">Is the sentence right?</span></div>
+   <div class="game-card" onclick="startGame(5)"><i class="fas fa-heart"></i><h3>3 Lives Challenge</h3><span class="meta">3 mistakes and you're out!</span></div>
+  </div>
+ </div>
+
+ <div id="game-screen" class="screen">
+  <div class="g-top">
+   <button class="btn btn-back" onclick="quitGame()"><i class="fas fa-arrow-left"></i> Back</button>
+   <h3 id="g-title"></h3>
+  </div>
+  <div class="panel" id="panel">
+   <div class="p-head"><span id="q-count">Question 1 / 10</span><span class="lives" id="lives"></span><span class="score" id="score">0</span></div>
+   <div class="progress"><div id="bar"></div></div>
+   <span class="q-type" id="q-type"></span>
+   <div class="question" id="question"></div>
+   <div class="options" id="options"></div>
+   <div class="arena-box bubbles" id="bubbles" style="display:none"></div>
+   <div class="arena-box targets" id="targets" style="display:none"></div>
+   <div class="feedback" id="feedback">
+    <div class="fb-title" id="fb-title"></div>
+    <div class="fb-ans" id="fb-ans"></div>
+    <div class="fb-why" id="fb-why"></div>
+    <div class="fb-next"><button class="btn btn-main" id="fb-next" onclick="nextQuestion()">التالي <i class="fas fa-arrow-left"></i></button></div>
+   </div>
+  </div>
+ </div>
+
+ <div id="results" class="screen">
+  <h2 id="res-title">Game Over!</h2>
+  <div class="stars" id="stars"></div>
+  <h3 class="final-score">Score: <span id="final-score"></span> / <span id="final-total"></span></h3>
+  <div id="mistakes" class="results-list"></div>
+  <div class="actions">
+   <button class="btn btn-main" onclick="startGame(currentGame)"><i class="fas fa-redo"></i> Play Again</button>
+   <button class="btn btn-dark" onclick="show('menu')"><i class="fas fa-th-large"></i> Games Menu</button>
+  </div>
+ </div>
+</div>
+
+<footer>Sec 2 English · Unit 1 — <span>Egypt-Africa Cooperation</span></footer>
+
+<script>
+// c: v = vocabulary, g = grammar, w = writing, r = reading/translation
+const SECTIONS = [
+{
+id: 'p1', title: 'Part 1', sub: 'Lesson 1: Egypt: Gateway to Africa · Lesson 2: Voices from the Partnership',
+grammar: 'Present Continuous (Active & Passive)', icon: 'fa-earth-africa',
+bank: [
+{c:'v',text:"Passport officers check passports at the _____ before allowing travelers to enter the country.",ans:"gateway",wrong:["growth","highway","route"],exp:"gateway تعني «بوابة / نقطة دخول»، والمكان الذي يُفحص فيه جواز السفر قبل دخول البلد هو بوابة الدخول."},
+{c:'v',text:"Fresh vegetables are often transported long distances from _____ areas to city markets.",ans:"rural",wrong:["civil","artificial","basic"],exp:"rural تعني «ريفي»، والخضروات تُزرع في المناطق الريفية ثم تُنقل إلى أسواق المدن."},
+{c:'v',text:"Cotton, wool, and silk are traditional raw materials used in _____ production.",ans:"textile",wrong:["metal","energy","plastic"],exp:"textiles تعني «منسوجات»، والقطن والصوف والحرير خامات تُستخدم في صناعة النسيج."},
+{c:'v',text:"Students who fail to _____ at least 80% of their classes may not be allowed to take the final exam.",ans:"attend",wrong:["avoid","create","deny"],exp:"attend تعني «يحضر»، والمقصود حضور 80% من الحصص على الأقل."},
+{c:'v',text:"Nowadays, farm workers use heavy _____ to harvest crops efficiently.",ans:"machinery",wrong:["furniture","irrigation","vision"],exp:"machinery تعني «آلات»، والعمال يستخدمون الآلات الثقيلة لحصاد المحاصيل."},
+{c:'v',text:"Each electrical _____ of this brand comes with a one-year warranty.",ans:"product",wrong:["construction","structure","office"],exp:"product تعني «منتج»، والضمان يكون على كل منتج كهربائي من هذه الماركة."},
+{c:'v',text:"Both companies benefited from the _____ exchange of technology and experience.",ans:"mutual",wrong:["costly","physical","temporary"],exp:"mutual تعني «متبادل» بين طرفين أو أكثر، وكلمة exchange (تبادل) تحتاج هذه الصفة."},
+{c:'v',text:"The flu _____ is recommended annually, especially for those with chronic diseases.",ans:"vaccine",wrong:["operation","therapy","trade"],exp:"vaccine تعني «لقاح»، ولقاح الإنفلونزا يُنصح به سنويًا لأصحاب الأمراض المزمنة."},
+{c:'v',text:"The basic physical and organizational structures and facilities are called _____.",ans:"infrastructure",wrong:["enterprise","initiative","capacity"],exp:"infrastructure تعني «البنية التحتية»: المباني والطرق وإمدادات الطاقة اللازمة لتشغيل المجتمع."},
+{c:'v',text:"A _____ is an arrangement where two or more parties cooperate to advance their mutual interests.",ans:"partnership",wrong:["separation","structure","solidarity"],exp:"partnership تعني «شراكة»: اتفاق يتعاون فيه طرفان أو أكثر لتحقيق مصالح مشتركة."},
+{c:'v',text:"\"The old patient was attended by two nurses.\" The verb \"attend\" here means to _____.",ans:"care for",wrong:["go to","understand","fetch"],exp:"من معاني attend «يعتني بشخص» خاصةً المريض، والممرضتان كانتا تعتنيان بالمريض."},
+{c:'v',text:"The exact _____ of the hotel where the royal couple is staying is a secret.",ans:"location",wrong:["situation","destination","sight"],exp:"location تعني «موقع/مكان»، والسر هو مكان الفندق بالتحديد."},
+{c:'v',text:"World leaders will meet at the economic UN _____ to discuss trade and money issues.",ans:"summit",wrong:["research","clinic","meeting"],exp:"summit تعني «قمة»: اجتماع بين قادة الدول لمناقشة أمور مهمة، أما meeting فاجتماع عادي."},
+{c:'v',text:"The manager says that motivating the staff is very _____ in getting work done.",ans:"effective",wrong:["initiative","impressive","boring"],exp:"effective تعني «فعّال ومفيد»، أما impressive فتعني «مُبهر يثير الإعجاب»."},
+{c:'v',text:"The fireworks display was truly _____ and amazed the crowd.",ans:"impressive",wrong:["affecting","effective","attentive"],exp:"impressive تعني «مُبهر» يوحي بالإعجاب، والألعاب النارية أبهرت الجمهور."},
+{c:'v',text:"The sad movie had an _____ impact on the audience.",ans:"affecting",wrong:["impressive","effective","attentive"],exp:"affecting / moving تعني «مؤثر» يوحي بالحزن والشجن، وهو المناسب لفيلم حزين."},
+{c:'v',text:"The company plans to _____ its business by opening new stores in different cities.",ans:"expand",wrong:["extend","explain","export"],exp:"expand تعني «يوسّع» في الحجم أو النطاق (للأشياء المادية والتجارية)، أما extend فللوقت أو النفوذ."},
+{c:'v',text:"We decided to _____ our trip by an extra week to see more of the country.",ans:"extend",wrong:["expand","export","explore"],exp:"extend تعني «يمدّ/يطيل» وتُستخدم مع الوقت، وهنا نمدّ الرحلة أسبوعًا إضافيًا."},
+{c:'v',text:"Money that is given to support a project, business, or activity is called _____.",ans:"funding",wrong:["fashion","forum","facility"],exp:"funding تعني «تمويل»: المال المقدَّم لدعم مشروع أو نشاط."},
+{c:'v',text:"A mix of two different things, especially to make something better, is described as _____.",ans:"hybrid",wrong:["rural","stable","mutual"],exp:"hybrid تعني «هجين»: خليط من شيئين مختلفين لإنتاج شيء أفضل، مثل الذرة الهجين."},
+{c:'v',text:"Something made or produced on a large scale using machinery is _____.",ans:"manufactured",wrong:["agricultural","rural","natural"],exp:"manufactured تعني «مُصنَّع» بكميات كبيرة باستخدام الآلات."},
+{c:'v',text:"\"Not changing too much; strong and steady\" is the meaning of _____.",ans:"stable",wrong:["hybrid","mutual","rural"],exp:"stable تعني «مستقر/ثابت» لا يتغير كثيرًا."},
+{c:'v',text:"The process of bringing different groups or systems together to work as one is _____.",ans:"integration",wrong:["separation","limitation","recommendation"],exp:"integration تعني «تكامل/اندماج»: جمع أنظمة أو مجموعات مختلفة لتعمل كوحدة واحدة."},
+{c:'v',text:"Farmers in East Africa now grow _____ crops suitable for dry regions.",ans:"drought-tolerant",wrong:["water-intensive","solar-powered","cross-border"],exp:"drought-tolerant تعني «مقاوم للجفاف»، وهي المحاصيل المناسبة للمناطق الجافة."},
+{c:'v',text:"The _____ irrigation initiative in northern Kenya uses energy from the sun.",ans:"solar-powered",wrong:["water-intensive","drought-tolerant","sub-Saharan"],exp:"solar-powered تعني «يعمل بالطاقة الشمسية»، وهو مشروع الري في شمال كينيا."},
+{c:'v',text:"The biggest challenge remains infrastructure limitations, especially in _____ transport and customs.",ans:"cross-border",wrong:["climate-resilient","drought-tolerant","solar-powered"],exp:"cross-border تعني «عبر الحدود»، والنقل والجمارك بين الدول يحدث عبر الحدود."},
+{c:'v',text:"Egypt is strengthening its ties with _____ African nations through infrastructure projects.",ans:"Sub-Saharan",wrong:["drought-tolerant","water-intensive","solar-powered"],exp:"Sub-Saharan تعني «جنوب الصحراء الكبرى الأفريقية»، وهي صفة تصف دولًا ومناطق."},
+{c:'v',text:"Egypt sends medical _____ with doctors and medicines to African countries.",ans:"convoys",wrong:["customs","textiles","summits"],exp:"convoy تعني «قافلة/موكب»، ومصر ترسل قوافل طبية إلى الدول الأفريقية."},
+{c:'v',text:"Egypt offers _____ to African students to study at its universities.",ans:"scholarships",wrong:["textiles","convoys","customs"],exp:"scholarship تعني «منحة دراسية» تُقدَّم للطلاب للدراسة."},
+{c:'v',text:"Egypt plays a vital _____ in Africa's development.",ans:"role",wrong:["rule","roll","road"],exp:"التعبير play a vital role يعني «يلعب دورًا حيويًا»."},
+{c:'v',text:"Egyptian and African engineers stand shoulder _____ shoulder to build the future.",ans:"to",wrong:["by","with","on"],exp:"التعبير stand shoulder to shoulder يعني «يقف جنبًا إلى جنب»."},
+{c:'v',text:"Egypt and its partners decided to scale _____ funding for small community projects.",ans:"up",wrong:["back","down","off"],exp:"scale up تعني «يزيد نطاق/يوسّع»، أما scale back فتعني «يخفّض/يقلّل»."},
+{c:'v',text:"Egypt helps African countries _____ challenges about water and energy.",ans:"face",wrong:["play","stand","combine"],exp:"التعبير face challenges يعني «يواجه تحديات»."},
+{c:'v',text:"The noun from the verb \"achieve\" is _____.",ans:"achievement",wrong:["achievable","achieved","achieving"],exp:"achieve (فعل) ← achievement (اسم: إنجاز) ← achievable (صفة: قابل للتحقيق)."},
+{c:'v',text:"The adjective of \"attend\" that means \"paying attention\" is _____.",ans:"attentive",wrong:["attendance","attendant","attended"],exp:"attentive صفة تعني «منتبه/متيقظ»، أما attendance و attendant فأسماء."},
+{c:'v',text:"The noun from the verb \"participate\" is _____.",ans:"participation",wrong:["participatory","participated","participates"],exp:"participate (يشارك) ← participation (مشاركة) و participant (مشارك)، أما participatory فصفة."},
+{c:'v',text:"The synonym of \"advantageous\" is _____.",ans:"beneficial",wrong:["harmful","unfavorable","chaotic"],exp:"advantageous تعني «مفيد/مُربح» ومرادفها beneficial / favorable."},
+{c:'v',text:"The antonym of \"flourish\" is _____.",ans:"decline",wrong:["prosper","succeed","grow"],exp:"flourish تعني «يزدهر» وعكسها decline / fail «يتراجع/يفشل»."},
+{c:'v',text:"The synonym of \"boost\" is _____.",ans:"enhance",wrong:["undermine","hinder","weaken"],exp:"boost تعني «يعزز/يدعم» ومرادفها push / enhance، أما undermine و hinder فعكسها."},
+{c:'v',text:"The antonym of \"currently\" is _____.",ans:"previously",wrong:["presently","now","nowadays"],exp:"currently تعني «حاليًا» وعكسها previously / formerly «سابقًا»."},
+{c:'v',text:"The synonym of \"empower\" is _____.",ans:"enable",wrong:["disable","weaken","limit"],exp:"empower تعني «يمكّن/يقوّي» ومرادفها enable / strengthen."},
+{c:'g',text:"Omar _____ to eat more vegetables these days.",ans:"is trying",wrong:["was trying","try","tried"],exp:"these days تدل على حدث مستمر في الفترة الحالية، فنستخدم المضارع المستمر: is + v-ing."},
+{c:'g',text:"Why _____ on the wrong side of the road? It's not your habit.",ans:"are you driving",wrong:["do you drive","were you driving","could you drive"],exp:"«ليست عادتك» تعني أن الفعل يحدث الآن بشكل مؤقت، لذلك نستخدم المضارع المستمر في السؤال."},
+{c:'g',text:"Some friends of mine _____ their own house. They hope to finish it next summer.",ans:"are building",wrong:["build","have built","built"],exp:"البيت لم ينتهِ بعد والعمل مستمر في هذه الفترة، لذلك نستخدم المضارع المستمر are building."},
+{c:'g',text:"I don't have anywhere to live right now. I _____ for a flat.",ans:"'m looking",wrong:["look","have looked","looked"],exp:"right now تدل على أن الحدث مستمر الآن، فنستخدم am looking."},
+{c:'g',text:"A: Where's Nada? B: She _____ a tennis match.",ans:"is playing",wrong:["played","has played","plays"],exp:"السؤال عن مكان ندى الآن، والإجابة تصف ما تفعله في هذه اللحظة، فنستخدم is playing."},
+{c:'g',text:"Everything is arranged for Samir's travel next Saturday. This means he _____ next Saturday.",ans:"is traveling",wrong:["travel","travels","was traveling"],exp:"نستخدم المضارع المستمر للترتيبات المؤكدة في المستقبل القريب (It's been arranged)."},
+{c:'g',text:"My sister is always _____ my clothes without asking!",ans:"borrowing",wrong:["borrow","is borrowing","borrows"],exp:"is always + v-ing تُستخدم للتعبير عن فعل يتكرر كثيرًا ويضايقنا، وis موجودة بالفعل في الجملة."},
+{c:'g',text:"Right now, a conference about African cooperation _____ in Cairo.",ans:"is being held",wrong:["held","is held","has held"],exp:"المؤتمر يُعقد (مبني للمجهول) الآن، والمضارع المستمر المبني للمجهول: is + being + P.P."},
+{c:'g',text:"Hazem _____ computer games. He should do something more active.",ans:"is always playing",wrong:["always played","always playing","always plays"],exp:"نستخدم is always + v-ing للشكوى من فعل يتكرر كثيرًا ويضايق."},
+{c:'g',text:"Look at those workers outside! A new road _____.",ans:"is being built",wrong:["is built","are built","was built"],exp:"Look! تدل على الآن، والطريق يُبنى بواسطة العمال (مجهول)، فنستخدم is being built."},
+{c:'g',text:"Right now, thousands of emails _____ around the world.",ans:"are being sent",wrong:["is sent","were sent","are sending"],exp:"الرسائل لا ترسل نفسها بل تُرسَل (مجهول)، وفاعلها جمع، فنستخدم are being sent."},
+{c:'g',text:"Please don't disturb them. They _____ their homework at the moment.",ans:"are doing",wrong:["do","have done","does"],exp:"at the moment من علامات المضارع المستمر، والفاعل جمع: are doing."},
+{c:'g',text:"A very important match _____ live on TV now.",ans:"is being broadcast",wrong:["broadcasts","is broadcasting","was broadcast"],exp:"المباراة تُذاع (مجهول) الآن: is + being + P.P.، والتصريف الثالث لـ broadcast هو broadcast."},
+{c:'g',text:"I'm sorry, you can't talk to the manager. He _____ to an important client.",ans:"is talking",wrong:["talks","talk","has talked"],exp:"المدير مشغول الآن في منتصف الحديث، فنستخدم المضارع المستمر is talking."},
+{c:'g',text:"Be quiet! The baby _____.",ans:"is sleeping",wrong:["sleeps","slept","has slept"],exp:"Be quiet! تدل على أن الطفل نائم الآن، فنستخدم is sleeping."},
+{c:'g',text:"A: Where have you arranged to spend the summer vacation? B: I _____ two weeks in Sharm El-Sheikh.",ans:"am spending",wrong:["had spent","spent","spends"],exp:"السؤال عن ترتيب مستقبلي مؤكد (arranged)، فنستخدم المضارع المستمر am spending."},
+{c:'g',text:"We _____ our sister's wedding party tomorrow; we have made all preparations.",ans:"are having",wrong:["had had","have had","has"],exp:"كل الترتيبات تمت والحفل غدًا، فهو ترتيب مستقبلي مؤكد: are having."},
+{c:'g',text:"You _____ to loud music. This is annoying; I can't concentrate!",ans:"are always listening",wrong:["always listened","always are listening","are always listened"],exp:"للتعبير عن الضيق من فعل متكرر نستخدم: am/is/are + always + v-ing، وalways تأتي بعد are."},
+{c:'g',text:"Look! Bassem _____ up his room.",ans:"is tidying",wrong:["was tidying","had tidied","would tidy"],exp:"Look! من علامات المضارع المستمر لأنها تدل على حدث يحدث الآن."},
+{c:'g',text:"She can't come to the phone right now. She _____ a shower.",ans:"is taking",wrong:["takes","has taken","was taking"],exp:"right now تدل على حدث يحدث الآن: is taking."},
+{c:'g',text:"Don't worry about the invitation. It _____ to all the guests right now.",ans:"is being sent",wrong:["is sending","are sending","was being sent"],exp:"الدعوة تُرسَل (مجهول) الآن، والفاعل مفرد: is being sent."},
+{c:'g',text:"Would you mind giving me a lift? My car _____ at the mechanic's.",ans:"is being checked",wrong:["was being checked","checks","is checking"],exp:"السيارة يتم فحصها الآن عند الميكانيكي (مجهول مستمر): is being checked."},
+{c:'g',text:"Sarah _____ her dirty clothes on the floor! It really annoys me.",ans:"is always leaving",wrong:["leave","is left","was left"],exp:"is always + v-ing للتعبير عن فعل متكرر يضايقنا."},
+{c:'g',text:"Mariam is busy at the moment. She _____ her hair.",ans:"is washing",wrong:["wash","washes","has washed"],exp:"at the moment تدل على المضارع المستمر: is washing."},
+{c:'g',text:"If you _____ this comic book, I'd like to borrow it.",ans:"aren't reading",wrong:["don't read","read","were reading"],exp:"المعنى: إذا لم تكن تقرؤه الآن، فنستخدم النفي في المضارع المستمر aren't reading."},
+{c:'g',text:"Some men are waiting outside for you _____.",ans:"at the moment",wrong:["at that time","recently","2 hours ago"],exp:"المضارع المستمر يستخدم مع: now, at the moment, at present, these days, still..."},
+{c:'g',text:"Find the mistake: \"She are reading a new book now.\" → She _____ a new book now.",ans:"is reading",wrong:["are reading","reading","be reading"],exp:"الفاعل She مفرد، فنستخدم is وليس are."},
+{c:'g',text:"Find the mistake: \"The baby crying loudly at the moment.\" → The baby _____ loudly.",ans:"is crying",wrong:["crying","cries","cried"],exp:"المضارع المستمر يحتاج فعلًا مساعدًا: is + crying."},
+{c:'g',text:"Find the mistake: \"A new agreement is signed right now.\" → A new agreement _____ right now.",ans:"is being signed",wrong:["is signed","is signing","signs"],exp:"right now تحتاج المضارع المستمر، والمبني للمجهول منه: is being + P.P."},
+{c:'g',text:"Find the mistake: \"The goods are been shipped to the port now.\" → The goods _____ to the port now.",ans:"are being shipped",wrong:["are been shipped","are shipping","is being shipped"],exp:"المبني للمجهول في المضارع المستمر يكون بـ being وليس been: are being shipped."},
+{c:'g',text:"The passive of the present continuous is: Object + am/is/are + _____ + P.P.",ans:"being",wrong:["been","be","was"],exp:"قاعدة المبني للمجهول في المضارع المستمر: المفعول + am/is/are + being + التصريف الثالث."},
+{c:'g',text:"Look! The thief _____ by the police.",ans:"is being chased",wrong:["is chasing","chases","chased"],exp:"اللص هو من تتم مطاردته (مجهول) الآن: is being chased."},
+{c:'g',text:"\"Ahmed is in the middle of the chess game now.\" → Ahmed _____ chess now.",ans:"is playing",wrong:["plays","played","has played"],exp:"in the middle of = في منتصف الحدث، وهذا معنى المضارع المستمر."}
+]},
+{
+id: 'p2', title: 'Part 2', sub: 'Lesson 3: Egypt and Africa · Lesson 4: Success Stories · Lesson 5: Essay',
+grammar: 'Present Continuous: State / Stative Verbs', icon: 'fa-handshake',
+bank: [
+{c:'v',text:"Adding more lights will _____ the safety of the new Ring Road to Giza at night.",ans:"enhance",wrong:["threaten","postpone","appear"],exp:"enhance تعني «يعزز/يحسّن»، والإضاءة الإضافية تحسّن الأمان."},
+{c:'v',text:"Receiving the scholarship was a crucial _____ that opened many doors for him.",ans:"milestone",wrong:["accident","mistake","stone"],exp:"milestone تعني «محطة بارزة/إنجاز مهم» في مسيرة شخص أو شيء."},
+{c:'v',text:"The farmer was disappointed with this year's corn _____ due to the drought.",ans:"yield",wrong:["equipment","schedule","expense"],exp:"yield تعني «المحصول/الناتج» الزراعي، والجفاف قلّل محصول الذرة."},
+{c:'v',text:"Doctors recommend a regular _____ health checkup for people over 40.",ans:"annual",wrong:["risky","optional","dangerous"],exp:"annual تعني «سنوي»، والفحص الدوري المنتظم يكون سنويًا."},
+{c:'v',text:"The new industrial area will bring _____ benefits to the community by exporting to foreign countries.",ans:"economic",wrong:["social","political","environmental"],exp:"economic تعني «اقتصادي»، والتصدير يحقق فوائد اقتصادية."},
+{c:'v',text:"The government plans to _____ billions of dollars in new roads and bridges.",ans:"invest",wrong:["waste","withdraw","donate"],exp:"invest in تعني «يستثمر في»، والحكومة تستثمر المليارات في الطرق والكباري."},
+{c:'v',text:"The government is improving _____ services for everyone by investing more in hospitals.",ans:"healthcare",wrong:["education","housing","transportation"],exp:"healthcare تعني «الرعاية الصحية»، والاستثمار في المستشفيات يحسّنها."},
+{c:'v',text:"Africa is a large _____ with many different countries and cultures.",ans:"continent",wrong:["country","region","island"],exp:"continent تعني «قارة»، وأفريقيا قارة بها دول وثقافات كثيرة."},
+{c:'v',text:"Medicine must be taken at a _____ time as directed by your doctor.",ans:"specific",wrong:["strange","past","common"],exp:"at a specific time تعني «في وقت محدد»."},
+{c:'v',text:"The young designer was hired to _____ new ideas to the traditional advertising company.",ans:"bring",wrong:["follow","rely","depend"],exp:"التعبير bring new ideas يعني «يجلب أفكارًا جديدة»."},
+{c:'v',text:"They're planning to _____ a party for their anniversary to celebrate 10 years together.",ans:"give",wrong:["do","take","value"],exp:"التعبير give a party يعني «يقيم حفلًا»."},
+{c:'v',text:"Mother always warns me that eating too much junk food can result _____ serious health problems.",ans:"in",wrong:["at","of","for"],exp:"result in تعني «يؤدي إلى»، أما result from فتعني «ينتج عن»."},
+{c:'v',text:"The company's _____ social media content helped increase their followers.",ans:"engaging",wrong:["engages","engagement","engagingly"],exp:"قبل الاسم content نحتاج صفة، وengaging تعني «جذّاب/تفاعلي»."},
+{c:'v',text:"I rely on my alarm clock every morning. The noun of the verb \"rely\" is _____.",ans:"reliance",wrong:["relied","reliant","reliantly"],exp:"rely (يعتمد) ← reliance (اسم: اعتماد) ← reliant (صفة: معتمد)."},
+{c:'v',text:"The synonym of the adjective \"artistic\" is _____.",ans:"creative",wrong:["common","highlighted","targeted"],exp:"artistic تعني «فني» ومرادفها creative / imaginative."},
+{c:'v',text:"The company's overall profit has improved. The antonym of \"overall\" is _____.",ans:"partial",wrong:["general","effective","helpful"],exp:"overall تعني «إجمالي/عام» وعكسها specific / partial «جزئي»."},
+{c:'v',text:"_____ is the act of being involved or participating in something.",ans:"Engagement",wrong:["Collaboration","Feature","Irrigation"],exp:"engagement تعني «مشاركة/تفاعل»: أن تكون مشاركًا في شيء."},
+{c:'v',text:"The maximum amount that something can contain or produce is _____.",ans:"capacity",wrong:["reliance","milestone","mission"],exp:"capacity تعني «سعة/قدرة»: أقصى ما يستطيع الشيء احتواءه أو إنتاجه."},
+{c:'v',text:"The adjective \"_____\" means directed or designed to reach a specific group, object, or goal.",ans:"targeted",wrong:["intended","eligible","highlighted"],exp:"targeted تعني «مستهدف»: موجه لفئة أو هدف محدد."},
+{c:'v',text:"The soccer team will _____ the opposing team's weak defense on the left side.",ans:"exploit",wrong:["employ","hire","introduce"],exp:"exploit تعني «يستغل» شيئًا لصالحه مثل نقطة ضعف المنافس."},
+{c:'v',text:"The tour _____ showed the group around the historic city.",ans:"leader",wrong:["minister","ruler","employer"],exp:"leader تعني «قائد» لمجموعة، أما ruler فحاكم بلد له سلطة رسمية."},
+{c:'v',text:"The graduation ceremony is an important _____ in every student's life.",ans:"event",wrong:["accident","incident","funeral"],exp:"event حدث مهم أو مشوق، أما incident فحدث غير عادي أو غير سار."},
+{c:'v',text:"The factory _____ 100 workers at its inauguration.",ans:"employed",wrong:["exploited","introduced","ruled"],exp:"employ تعني «يوظّف شخصًا للعمل»."},
+{c:'v',text:"The company will _____ a new product next month.",ans:"introduce",wrong:["exploit","employ","rule"],exp:"من معاني introduce «يطلق أو يقدّم شيئًا جديدًا» مثل منتج."},
+{c:'v',text:"Solar and wind power are _____ energy sources.",ans:"renewable",wrong:["fossil","harmful","limited"],exp:"renewable تعني «متجدد»، وطاقة الشمس والرياح لا تنفد."},
+{c:'v',text:"Burning _____ like oil and coal pollutes the air.",ans:"fossil fuels",wrong:["solar panels","renewable sources","fresh foods"],exp:"fossil fuel تعني «وقود أحفوري» مثل البترول والفحم، وحرقه يلوث الهواء."},
+{c:'v',text:"Modern _____ systems help farmers water their crops in dry areas.",ans:"irrigation",wrong:["reliance","mission","security"],exp:"irrigation تعني «الري» أي توصيل المياه للأرض الزراعية."},
+{c:'v',text:"The antonym of \"establish\" is _____.",ans:"demolish",wrong:["found","set up","build"],exp:"establish تعني «يؤسس» وعكسها demolish «يهدم/يدمر»."},
+{c:'v',text:"The synonym of \"contribute\" is _____.",ans:"donate",wrong:["withdraw","oppose","demolish"],exp:"contribute تعني «يساهم» ومرادفها donate / participate / devote."},
+{c:'v',text:"The synonym of \"highlighted\" is _____.",ans:"emphasized",wrong:["downplayed","minimized","ignored"],exp:"highlighted تعني «مميز/مؤكد عليه» ومرادفها emphasized / featured."},
+{c:'v',text:"The antonym of \"security\" is _____.",ans:"insecurity",wrong:["safety","protection","peace"],exp:"security تعني «أمن» وعكسها insecurity / danger «عدم أمان/خطر»."},
+{c:'v',text:"The synonym of the verb \"supply\" is _____.",ans:"provide",wrong:["demand","withdraw","refuse"],exp:"supply تعني «يزوّد/يمد» ومرادفها provide / furnish، وعكسها demand."},
+{c:'v',text:"The antonym of \"targeted\" is _____.",ans:"general",wrong:["aimed","specific","directed"],exp:"targeted تعني «مستهدف/محدد» وعكسها general / broad «عام/واسع»."},
+{c:'v',text:"The noun from the verb \"collaborate\" is _____.",ans:"collaboration",wrong:["collaborative","collaborated","collaborates"],exp:"collaborate (يتعاون) ← collaboration (تعاون) ← collaborative (صفة: تعاوني)."},
+{c:'v',text:"The adjective from the verb \"transform\" is _____.",ans:"transformative",wrong:["transformation","transforms","transformer"],exp:"transform (يحوّل) ← transformation (اسم: تحوّل) ← transformative (صفة: تحويلي)."},
+{c:'v',text:"Egypt is reducing its _____ on fossil fuels by building solar parks.",ans:"reliance",wrong:["reliable","rely","relied"],exp:"بعد its نحتاج اسمًا، والتعبير reliance on يعني «الاعتماد على»."},
+{c:'v',text:"New projects _____ the ties between Egypt and its African neighbors.",ans:"strengthen",wrong:["weaken","demolish","withdraw"],exp:"strengthen تعني «يعزز/يقوّي»، والمشروعات تقوّي العلاقات."},
+{c:'v',text:"_____ conclusion, Egypt is a key partner for Africa's development.",ans:"In",wrong:["At","On","By"],exp:"التعبير In conclusion يعني «في الختام»."},
+{c:'g',text:"I _____ that honesty is the best policy.",ans:"think",wrong:["am thinking","thinks","thinking"],exp:"think هنا تعبّر عن رأي (اعتقاد)، وأفعال الرأي لا تُستخدم في المضارع المستمر."},
+{c:'g',text:"Which sentence is correct? _____",ans:"I have a new laptop that I use for my studies.",wrong:["I am having a new laptop that I use for my studies.","I having a new laptop for my studies.","I am have a new laptop for my studies."],exp:"have بمعنى «يملك» فعل حالة لا يُستخدم في المضارع المستمر."},
+{c:'g',text:"Which sentence uses the verb \"see\" to mean a deliberate action? _____",ans:"I am seeing my doctor for a check-up this afternoon.",wrong:["I see a beautiful bird outside my window.","With these new glasses, I can see much better.","He sees the importance of this decision."],exp:"see بمعنى «يقابل/يزور» فعل حركي يأتي في المضارع المستمر، أما بمعنى «يرى» فهو فعل حالة."},
+{c:'g',text:"Which sentence uses the verb \"be\" in a dynamic way to describe temporary behavior? _____",ans:"Why are you being so rude to me today?",wrong:["Water is essential for life.","He is a very intelligent student.","The world is round."],exp:"is being تصف سلوكًا مؤقتًا هذه الأيام فقط (يتصرف بوقاحة اليوم)، أما is فتصف صفة دائمة."},
+{c:'g',text:"Which sentence is correct? _____",ans:"The chef is tasting the soup to check the seasoning.",wrong:["This cake is tasting delicious.","I am loving the music at this party.","She is having two brothers and one sister."],exp:"taste بمعنى «يتذوق» (فعل حركي) يأتي مستمرًا، أما بمعنى «طعمه» فهو فعل حالة."},
+{c:'g',text:"Find the mistake: \"I'm having a car now.\" → I _____ a car now.",ans:"have",wrong:["am having","having","has"],exp:"have بمعنى «يملك» فعل ملكية لا يأتي في المضارع المستمر."},
+{c:'g',text:"Find the mistake: \"We needing to build a hospital.\" → We _____ to build a hospital.",ans:"need",wrong:["needing","are needing","needs"],exp:"need فعل حالة (احتياج) لا يأتي مستمرًا، والفاعل We يأخذ need بدون s."},
+{c:'g',text:"Find the mistake: \"I don't eating at the moment.\" → I _____ at the moment.",ans:"am not eating",wrong:["don't eating","not eating","doesn't eat"],exp:"نفي المضارع المستمر: am/is/are + not + v-ing، ولا نستخدم don't مع v-ing."},
+{c:'g',text:"Find the mistake: \"The food is tasting nice.\" → The food _____ nice.",ans:"tastes",wrong:["is tasting","taste","tasting"],exp:"taste هنا تصف طعم الشيء (حالة ثابتة)، فنستخدم المضارع البسيط tastes."},
+{c:'g',text:"Find the mistake: \"You are love healthy food.\" → You _____ healthy food.",ans:"love",wrong:["are love","are loving","loves"],exp:"love فعل مشاعر لا يأتي في المضارع المستمر، والفاعل You يأخذ love."},
+{c:'g',text:"Most scientists _____ that the world is getting hotter.",ans:"believe",wrong:["are believed","are believing","will believe"],exp:"believe فعل رأي واعتقاد لا يأتي في المضارع المستمر."},
+{c:'g',text:"Hana likes reading science fiction stories, but her brothers _____ sport.",ans:"like",wrong:["liked","are liking","likes"],exp:"like فعل مشاعر لا يأتي مستمرًا، والفاعل brothers جمع فنستخدم like."},
+{c:'g',text:"They're hungry. They _____ something to eat.",ans:"want",wrong:["wants","are wanting","were wanting"],exp:"want فعل رغبة (حالة) لا يأتي في المضارع المستمر."},
+{c:'g',text:"The sky _____ grey and the wind is blowing. I think it is going to rain.",ans:"looks",wrong:["isn't looking","has looked","will look"],exp:"look بمعنى «يبدو» فعل حالة، فنستخدم المضارع البسيط looks."},
+{c:'g',text:"You haven't said a word all morning. What _____ about?",ans:"are you thinking",wrong:["you think","do you think","you do think"],exp:"think about بمعنى «يفكر في أمر الآن» فعل حركي، فنستخدم المضارع المستمر."},
+{c:'g',text:"Something _____ different - Are you wearing a new suit?",ans:"seems",wrong:["seem","had seemed","is seeming"],exp:"seem فعل حالة بمعنى «يبدو» لا يأتي مستمرًا، والفاعل Something مفرد."},
+{c:'g',text:"When my brother has a bad cold, he _____ nothing.",ans:"tastes",wrong:["tasting","is tasting","tasted"],exp:"taste هنا تعبّر عن حاسة التذوق (إدراك) فهي فعل حالة: tastes."},
+{c:'g',text:"Mohamed _____ more money than he can afford to pay.",ans:"owes",wrong:["owed","is owing","was owing"],exp:"owe (يدين بمال) فعل ملكية وحالة لا يأتي مستمرًا."},
+{c:'g',text:"I _____ the fish now. It _____ five kilos.",ans:"am weighing / weighs",wrong:["am weighing / is weighing","weigh / weighs","weigh / is weighing"],exp:"الأولى بمعنى «أزن» (فعل حركي) فتأتي مستمرة، والثانية بمعنى «وزنها» (حالة) فتأتي بسيطة."},
+{c:'g',text:"Which sentence is grammatically correct? _____",ans:"We are meeting on Monday to discuss some problems.",wrong:["I'm usually brushing my teeth at the moment.","My brother is wanting to look for a better job.","I don't eat breakfast this morning."],exp:"المضارع المستمر يستخدم للترتيبات المستقبلية (We are meeting on Monday)."},
+{c:'g',text:"I _____ a wonderful time in the village. Everyone is really nice.",ans:"am having",wrong:["am not having","going to have","had had"],exp:"have a good time بمعنى «يقضي وقتًا» فعل حركي، فيمكن أن يأتي مستمرًا."},
+{c:'g',text:"Call me later. I _____ dinner with my family.",ans:"am having",wrong:["will have had","have","have had"],exp:"have dinner بمعنى «يتناول العشاء» فعل حركي يحدث الآن: am having."},
+{c:'g',text:"I _____ about going to the sports club.",ans:"am thinking",wrong:["thought","think","am thought"],exp:"think about بمعنى «أفكر في/أدرس الأمر» فعل حركي، فيأتي مستمرًا."},
+{c:'g',text:"My friend _____ a lovely villa which has a nice pool.",ans:"has",wrong:["is having","having","is had"],exp:"have بمعنى «يملك» فعل حالة لا يأتي مستمرًا: has."},
+{c:'g',text:"His eyes are so bad. He _____ a little.",ans:"sees",wrong:["is seeing","seeing","see"],exp:"see بمعنى «يرى» (حاسة إبصار) فعل حالة، فنستخدم sees."},
+{c:'g',text:"The meat _____ 2 kilos.",ans:"weighs",wrong:["is weighing","weigh","weighing"],exp:"weigh بمعنى «يبلغ وزنه» فعل قياس (حالة)، فيأتي في المضارع البسيط."},
+{c:'g',text:"\"I'm seeing my lawyer tonight.\" Here \"seeing\" means _____.",ans:"meeting",wrong:["noticing","understanding","watching"],exp:"see في المستمر تعني «يقابل/يزور»، أي سأقابل المحامي الليلة."},
+{c:'g',text:"\"She's looking at some old photographs.\" This means she is _____ them.",ans:"examining",wrong:["seeming","owning","liking"],exp:"look at في المستمر تعني «يتفحّص/ينظر بتدقيق»."},
+{c:'g',text:"This week, the African Union _____ its annual summit in Addis Ababa.",ans:"is holding",wrong:["holds","is being held","was holding"],exp:"this week تدل على فترة حالية، والاتحاد الأفريقي هو الفاعل (معلوم): is holding."},
+{c:'g',text:"The new solar panels for the village _____ from Egypt next month.",ans:"are being shipped",wrong:["are shipping","ship","shipped"],exp:"الألواح تُشحن (مجهول) في ترتيب مستقبلي: are being shipped."},
+{c:'g',text:"More affordable medicines _____ to remote clinics as we speak.",ans:"are being delivered",wrong:["are delivering","deliver","were being delivered"],exp:"as we speak تعني الآن، والأدوية تُوصَّل (مجهول): are being delivered."},
+{c:'g',text:"New telecommunications cables _____ to connect Egypt with its southern neighbors.",ans:"are being laid",wrong:["are laying","is laid","have laid"],exp:"الكابلات تُمَد (مجهول) في الفترة الحالية، والفاعل جمع: are being laid."},
+{c:'g',text:"We _____ on a major project on sustainable energy this semester.",ans:"are working",wrong:["work","are being worked","worked"],exp:"this semester فترة حالية والعمل مستمر فيها: are working."},
+{c:'g',text:"Excuse the noise; the workers _____ the road to improve the infrastructure.",ans:"are repairing",wrong:["repair","repaired","have repaired"],exp:"الضوضاء الآن بسبب عمل يحدث الآن: are repairing."}
+]},
+{
+id: 'p3', title: 'Part 3', sub: 'Skills: Writing an Essay · Reading & Translation',
+grammar: null, icon: 'fa-feather-pointed',
+bank: [
+{c:'w',text:"An essay is like a structured story or _____ in which you write about a specific topic.",ans:"argument",wrong:["dialogue","poem","list"],exp:"المقال يشبه قصة أو مناقشة (argument) منظمة تكتب فيها عن موضوع معين."},
+{c:'w',text:"The three main parts of an essay are: introduction, body paragraphs and _____.",ans:"conclusion",wrong:["title","dialogue","question"],exp:"المقال يتكون من: مقدمة، فقرات الموضوع، ثم الخاتمة (conclusion)."},
+{c:'w',text:"An interesting sentence or question at the start of the essay that grabs attention is the _____.",ans:"hook",wrong:["thesis","conclusion","summary"],exp:"Hook جملة أو سؤال جذاب في بداية المقال لجذب انتباه القارئ."},
+{c:'w',text:"The most important sentence in the introduction that tells the reader what the essay will prove is the _____.",ans:"thesis statement",wrong:["hook","topic sentence","closing thought"],exp:"Thesis Statement (جملة الموضوع الرئيسية) هي أهم جملة في المقدمة وتخبر القارئ بموضوع المقال."},
+{c:'w',text:"Each body paragraph must focus on _____ main idea that supports your thesis.",ans:"one",wrong:["two","three","many"],exp:"كل فقرة تركز على فكرة رئيسية واحدة فقط (ONE main idea)."},
+{c:'w',text:"Start each body paragraph with a _____ that introduces its main idea.",ans:"topic sentence",wrong:["thesis statement","hook","conclusion"],exp:"تبدأ كل فقرة بـ Topic Sentence تُظهر الفكرة الرئيسية للفقرة."},
+{c:'w',text:"Support your topic sentence with reasons, facts, or _____.",ans:"examples",wrong:["jokes","questions","titles"],exp:"ندعم الجملة الرئيسية للفقرة بالأسباب والحقائق والأمثلة."},
+{c:'w',text:"In the conclusion, you should _____ your thesis in new words.",ans:"restate",wrong:["delete","ignore","copy"],exp:"في الخاتمة نعيد صياغة جملة الموضوع بطريقة جديدة (Restate your thesis in new words)."},
+{c:'w',text:"End your essay with a strong _____ thought that makes it feel complete.",ans:"closing",wrong:["opening","confusing","weak"],exp:"نختم المقال بفكرة ختامية قوية (closing thought) تجعله كاملًا."},
+{c:'w',text:"You explain and prove your thesis with ideas and evidence in the _____.",ans:"body paragraphs",wrong:["introduction","title","hook"],exp:"فقرات الموضوع (Body) هي التي نشرح فيها ونثبت جملة الموضوع بالأفكار والأدلة."},
+{c:'w',text:"In the conclusion, you _____ your main points and leave a final impression.",ans:"summarize",wrong:["forget","repeat word by word","hide"],exp:"الخاتمة تلخّص النقاط الرئيسية وتترك انطباعًا أخيرًا."},
+{c:'w',text:"\"In conclusion, Egypt is much more than a geographical bridge.\" This sentence belongs to the _____.",ans:"conclusion",wrong:["introduction","hook","title"],exp:"تبدأ الجملة بـ In conclusion وتلخص الفكرة، فهي من الخاتمة."},
+{c:'w',text:"\"Egypt holds a unique and vital position as the gateway to Africa.\" In the model essay, this sentence is part of the _____.",ans:"introduction",wrong:["conclusion","body","summary"],exp:"هذه أول جملة في المقال النموذجي وتعرّف الموضوع، فهي جزء من المقدمة."},
+{c:'w',text:"Which linking word adds a new idea? _____",ans:"Furthermore",wrong:["However","Although","But"],exp:"Furthermore / In addition / Moreover أدوات ربط لإضافة فكرة جديدة."},
+{c:'w',text:"Which linking word shows contrast? _____",ans:"However",wrong:["Furthermore","In addition","Moreover"],exp:"However تعني «ومع ذلك» وتُستخدم لإظهار التناقض."},
+{c:'w',text:"Which phrase is best to start the last paragraph of an essay? _____",ans:"In conclusion",wrong:["First of all","For example","In addition"],exp:"In conclusion / In short تُستخدم لبدء الخاتمة."},
+{c:'w',text:"In the model essay, Egypt's strategic location bridges Africa with the Middle East and _____.",ans:"Europe",wrong:["America","Australia","Antarctica"],exp:"المقال النموذجي: موقع مصر يربط القارة بالشرق الأوسط وأوروبا."},
+{c:'w',text:"In the model essay, cultural exchanges such as scholarships and _____ build lasting bonds.",ans:"festivals",wrong:["wars","taxes","factories"],exp:"التبادل الثقافي مثل المنح الدراسية والمهرجانات يبني روابط دائمة بين الشعوب."},
+{c:'w',text:"In the model essay, Egypt invests in infrastructure projects like roads and _____ networks.",ans:"energy",wrong:["fashion","sports","music"],exp:"المقال يذكر أن مصر تستثمر في مشروعات البنية التحتية مثل الطرق وشبكات الطاقة."},
+{c:'w',text:"\"Egypt is the continent's indispensable gateway.\" The word \"indispensable\" means _____.",ans:"essential",wrong:["useless","unknown","small"],exp:"indispensable تعني «لا غنى عنه/أساسي» ومرادفها essential."},
+{c:'w',text:"When you write an essay in the exam, it should be about _____ words.",ans:"150 - 180",wrong:["20 - 30","50 - 60","500 - 600"],exp:"المطلوب في التدريبات كتابة مقال من 150 إلى 180 كلمة."},
+{c:'r',text:"Keeping healthy is important because it helps the person _____.",ans:"feel active and live happily",wrong:["look better than others","sleep well at night","drink much water"],exp:"القطعة: الحفاظ على الصحة يجعلك تشعر بتحسن وطاقة أكبر وتعيش حياة سعيدة."},
+{c:'r',text:"A major benefit of exercising regularly is _____.",ans:"improving strength, heart health, and flexibility",wrong:["feeling more tired all day","having less food and water","sleeping fewer hours at night"],exp:"القطعة: الرياضة تقوي العضلات وتحسن صحة القلب والمرونة وتقلل التوتر."},
+{c:'r',text:"\"...as early detection of health problems can lead to easier treatment.\" The synonym of \"detection\" is _____.",ans:"discovery",wrong:["celebration","confusion","movement"],exp:"detection تعني «اكتشاف» ومرادفها discovery."},
+{c:'r',text:"Many doctors suggest at least _____ minutes of moderate exercise, five times a week.",ans:"30",wrong:["10","60","90"],exp:"القطعة: ينصح الأطباء بـ 30 دقيقة على الأقل من الرياضة المعتدلة خمس مرات أسبوعيًا."},
+{c:'r',text:"Most experts recommend between _____ hours of sleep each night for adults.",ans:"7 and 9",wrong:["3 and 5","10 and 12","5 and 6"],exp:"القطعة: يوصي الخبراء بالنوم من 7 إلى 9 ساعات للبالغين."},
+{c:'r',text:"Drinking water supports health as it _____.",ans:"removes waste from the body",wrong:["warms the body","increases fat storage","decreases strength"],exp:"القطعة: الماء ينظم حرارة الجسم وينقل الغذاء للخلايا ويخلّص الجسم من الفضلات."},
+{c:'r',text:"\"Aziz started to feel uncomfortable about their actions.\" The synonym of \"uncomfortable\" is _____.",ans:"uneasy",wrong:["relaxed","happy","calm"],exp:"uncomfortable تعني «غير مرتاح/منزعج» ومرادفها uneasy."},
+{c:'r',text:"Aziz learned that bad friends can have a big _____ impact on your life.",ans:"negative",wrong:["positive","funny","small"],exp:"الدرس في القطعة: أصدقاء السوء لهم تأثير سلبي كبير على حياتك."},
+{c:'r',text:"Choose the correct Arabic translation: \"Egypt is strengthening its ties with African countries.\" _____",ans:"تقوم مصر بتقوية علاقاتها مع الدول الأفريقية.",wrong:["قوّت مصر علاقاتها مع الدول الأفريقية.","سوف تقوّي مصر علاقاتها مع الدول الأفريقية.","تقوم الدول الأفريقية بتقوية علاقاتها مع مصر."],exp:"is strengthening مضارع مستمر يُترجم «تقوم بتقوية/تقوّي الآن»، والفاعل هو مصر وليس الدول الأفريقية."},
+{c:'r',text:"Choose the correct Arabic translation: \"Scientists are doing a lot of research to protect the world from diseases.\" _____",ans:"يقوم العلماء بالكثير من الأبحاث لحماية العالم من الأمراض.",wrong:["قام العلماء ببعض الأبحاث لحماية العالم من الأمراض.","سيقوم العلماء بالكثير من الأبحاث لعلاج الأمراض.","يقوم العالم بالكثير من الأبحاث لحماية العلماء."],exp:"are doing مضارع مستمر = «يقومون الآن»، و a lot of = «الكثير من»."},
+{c:'r',text:"Choose the correct English translation: «يتم بناء مستشفيات جديدة في المناطق الريفية الآن.» _____",ans:"New hospitals are being built in rural areas now.",wrong:["New hospitals were built in rural areas now.","New hospitals are building in rural areas now.","New hospitals is being built in urban areas now."],exp:"«يتم بناء ... الآن» مبني للمجهول في المضارع المستمر: are being built، و«ريفية» = rural."},
+{c:'r',text:"Choose the correct English translation: «تلعب مصر دورًا حيويًا في تنمية أفريقيا.» _____",ans:"Egypt plays a vital role in Africa's development.",wrong:["Egypt played a small role in Africa's development.","Egypt plays a vital rule in Africa's development.","Africa plays a vital role in Egypt's development."],exp:"«تلعب دورًا حيويًا» = plays a vital role (وليس rule)، والفاعل مصر."}
+]},
+{
+id: 'ge', title: 'General Exercises', sub: 'Unit 1 Review · Student\'s Book & Al-Azhar Corners',
+grammar: 'Present Continuous · Stative Verbs', icon: 'fa-clipboard-check',
+bank: [
+{c:'v',text:"Roads, electricity, and water systems are all part of a country's _____ which should be regularly developed.",ans:"infrastructure",wrong:["integration","collaboration","provision"],exp:"الطرق والكهرباء والمياه هي «البنية التحتية» infrastructure للدولة."},
+{c:'v',text:"Good teamwork depends on the _____ of new ideas into the project.",ans:"integration",wrong:["intention","efficiency","partnership"],exp:"integration تعني «دمج/تكامل»، أي دمج الأفكار الجديدة في المشروع."},
+{c:'v',text:"Trust grows inside the family when there is _____ understanding between its members.",ans:"mutual",wrong:["highlighted","separate","individual"],exp:"mutual understanding تعني «تفاهم متبادل» بين أفراد الأسرة."},
+{c:'v',text:"Parents give their children love and care, and _____ return, they hope for respect and gratitude.",ans:"in",wrong:["as","of","with"],exp:"التعبير in return يعني «في المقابل»."},
+{c:'v',text:"Teachers often use technology to _____ students' learning experience.",ans:"enhance",wrong:["finance","remind","inspect"],exp:"enhance تعني «يعزز/يحسّن» تجربة التعلم."},
+{c:'v',text:"Success in science often comes from close _____ between researchers inside or outside the country.",ans:"collaboration",wrong:["access","enterprise","experiment"],exp:"collaboration تعني «تعاون» وهو سبب النجاح بين الباحثين."},
+{c:'v',text:"The company plans to establish a new branch in Cairo. The synonym of \"establish\" is _____.",ans:"set up",wrong:["demolish","supply","collaborate"],exp:"establish تعني «يؤسس» ومرادفها found / set up، وعكسها demolish."},
+{c:'v',text:"\"I gave a muffled yell.\" The synonym of the word \"muffled\" is _____.",ans:"quiet and less clear",wrong:["loud speech","loud voice","very pure"],exp:"muffled تعني «مكتوم/غير واضح» أي صوت هادئ وأقل وضوحًا."},
+{c:'v',text:"The amazing _____ of the universe is a certain proof of the Oneness of the Creator.",ans:"balance",wrong:["chaos","things","trees"],exp:"balance تعني «توازن»، والتوازن المدهش في الكون دليل على وحدانية الخالق."},
+{c:'v',text:"The right path to arrive at our destination is the correct _____ of Allah.",ans:"knowledge",wrong:["ambition","ignorance","expectation"],exp:"knowledge تعني «معرفة»، والطريق الصحيح هو المعرفة الصحيحة بالله."},
+{c:'v',text:"The synonym of \"stable\" is _____.",ans:"steady",wrong:["changing","weak","shaky"],exp:"stable تعني «مستقر/ثابت» ومرادفها steady."},
+{c:'v',text:"The antonym of \"rural\" is _____.",ans:"urban",wrong:["agricultural","country","farming"],exp:"rural تعني «ريفي» وعكسها urban «حضري/مدني»."},
+{c:'v',text:"The word \"flourish\" means to _____.",ans:"grow and succeed",wrong:["decline","fail","stop"],exp:"flourish تعني «يزدهر» أي ينمو وينجح، ومرادفها prosper / succeed."},
+{c:'v',text:"The project _____ on helping rural communities get clean water.",ans:"focuses",wrong:["aims","plays","stands"],exp:"focus on تعني «يركز على»، أما aim فتأتي مع for أو at."},
+{c:'v',text:"The noun from the verb \"develop\" is _____.",ans:"development",wrong:["developed","developing","develops"],exp:"develop (يطوّر) ← development (اسم: تنمية/تطوير) ← developed / developing (صفات)."},
+{c:'v',text:"The adjective from the verb \"cooperate\" is _____.",ans:"cooperative",wrong:["cooperation","cooperator","cooperates"],exp:"cooperate (يتعاون) ← cooperation (تعاون) ← cooperative (صفة: متعاون)."},
+{c:'v',text:"The synonym of \"impressive\" is _____.",ans:"remarkable",wrong:["unimpressive","ordinary","boring"],exp:"impressive تعني «مثير للإعجاب» ومرادفها remarkable / notable."},
+{c:'v',text:"The antonym of \"basic\" is _____.",ans:"advanced",wrong:["fundamental","essential","simple"],exp:"basic تعني «أساسي/بسيط» وعكسها advanced / complex «متقدم/معقد»."},
+{c:'v',text:"The synonym of \"arrangement\" is _____.",ans:"organization",wrong:["chaos","disorder","mess"],exp:"arrangement تعني «ترتيب» ومرادفها organization / setup، وعكسها chaos / disorder."},
+{c:'v',text:"The synonym of \"capacity\" is _____.",ans:"ability",wrong:["incapacity","limitation","weakness"],exp:"capacity تعني «قدرة/سعة» ومرادفها ability / volume."},
+{c:'g',text:"I can't talk to you now. We _____ dinner with guests.",ans:"are having",wrong:["have","had","will have"],exp:"have dinner فعل حركي يحدث الآن: are having."},
+{c:'g',text:"The mechanic _____ the car engine at the moment.",ans:"is fixing",wrong:["fix","is being fixed","was fixing"],exp:"الميكانيكي هو الفاعل (معلوم) والحدث الآن: is fixing."},
+{c:'g',text:"Listen! Someone _____ the violin beautifully.",ans:"is playing",wrong:["plays","played","has played"],exp:"Listen! من علامات المضارع المستمر."},
+{c:'g',text:"Look at the sky! The clouds _____ darker and darker.",ans:"are becoming",wrong:["is becoming","are being become","was becoming"],exp:"الفاعل clouds جمع، والحدث يتغير الآن: are becoming."},
+{c:'g',text:"She _____ a dentist tomorrow at 10 a.m.",ans:"is seeing",wrong:["see","sees","seen"],exp:"see بمعنى «يقابل/يزور» في ترتيب مستقبلي مؤكد: is seeing."},
+{c:'g',text:"We _____ a big party next Friday evening.",ans:"are having",wrong:["are have","had","has"],exp:"ترتيب مستقبلي مؤكد بفعل حركي: are having."},
+{c:'g',text:"Look! The new hospital _____ near our house.",ans:"is being built",wrong:["builds","is building","built"],exp:"المستشفى يُبنى (مجهول) الآن: is being built."},
+{c:'g',text:"These days, more African students _____ in Egyptian universities.",ans:"are studying",wrong:["studied","were studying","has studied"],exp:"these days تدل على الفترة الحالية: are studying."},
+{c:'g',text:"Egypt _____ a unique position in Africa.",ans:"holds",wrong:["is holding","are holding","holding"],exp:"hold هنا بمعنى «يمتلك/يحتل مكانة» وهي حالة ثابتة، فنستخدم المضارع البسيط."},
+{c:'g',text:"Farmers in Kenya _____ new hybrid maize varieties at present.",ans:"are adopting",wrong:["adopts","adopted","are adopted"],exp:"at present من علامات المضارع المستمر، والمزارعون هم الفاعل: are adopting."},
+{c:'g',text:"The children _____ English by a new teacher this term.",ans:"are being taught",wrong:["are teaching","teach","taught"],exp:"الأطفال يتعلمون على يد معلم (مجهول) هذا الفصل: are being taught."},
+{c:'g',text:"I _____ you are right about this plan.",ans:"think",wrong:["am thinking","thinking","am think"],exp:"think بمعنى «أعتقد» (رأي) لا يأتي في المستمر."},
+{c:'g',text:"Mmm! The soup _____ delicious.",ans:"smells",wrong:["is smelling","smelling","smell"],exp:"smell هنا تصف رائحة الشيء (حالة)، فنستخدم smells."},
+{c:'g',text:"Why _____ your food? Is it bad?",ans:"are you smelling",wrong:["do you smelling","you smell","does you smell"],exp:"smell بمعنى «يشم/يحاول شم الطعام» فعل حركي، فيأتي مستمرًا."},
+{c:'g',text:"This book _____ to my brother.",ans:"belongs",wrong:["is belonging","belong","belonging"],exp:"belong (يخص/يملك) فعل ملكية لا يأتي مستمرًا."},
+{c:'g',text:"Ramy _____ very kind to me these days.",ans:"is being",wrong:["is been","be","being"],exp:"is being تصف سلوكًا مؤقتًا هذه الأيام فقط."},
+{c:'g',text:"I _____ some birds on the wall.",ans:"can see",wrong:["am seeing","seeing","am see"],exp:"بدل المضارع المستمر مع أفعال الإدراك نستخدم can + inf أو المضارع البسيط: I see / I can see."}
+]}
+];
+
+</script>
+<script>
+const PER_GAME = 15;
+const GAME_NAMES = {1:'Multiple Choice',2:'Falling Bubbles',3:'Target Practice',4:'True or False',5:'3 Lives Challenge'};
+const CAT_NAMES = {v:'Vocabulary',g:'Grammar',w:'Writing',r:'Reading & Translation'};
+const CAT_AR = {v:'مفردات',g:'قواعد',w:'كتابة',r:'قراءة وترجمة'};
+
+let sec = null, filter = 'all', currentGame = null;
+let qs = [], qi = 0, score = 0, lives = 3, mistakes = [], locked = true, timers = [];
+
+let audioCtx = null;
+try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {}
+function tone(type,f1,f2,dur,delay){const t0=audioCtx.currentTime+(delay||0);const o=audioCtx.createOscillator(),g=audioCtx.createGain();o.connect(g);g.connect(audioCtx.destination);o.type=type;o.frequency.setValueAtTime(f1,t0);o.frequency.exponentialRampToValueAtTime(f2,t0+dur);g.gain.setValueAtTime(.1,t0);g.gain.exponentialRampToValueAtTime(.01,t0+dur);o.start(t0);o.stop(t0+dur);}
+function sound(t){if(!audioCtx)return;try{if(audioCtx.state==='suspended')audioCtx.resume();if(t==='ok')tone('sine',400,800,.15);else if(t==='bad')tone('sawtooth',300,100,.3);else if(t==='win')[523,659,784,1047].forEach((f,i)=>tone('triangle',f,f,.25,i*.15));}catch(e){}}
+
+const $ = id => document.getElementById(id);
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function isArabic(s){return /[؀-ۿ]/.test(s);}
+
+function show(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  $(id).classList.add('active');
+  document.body.classList.toggle('playing', id==='game-screen');
+  window.scrollTo(0,0);
+}
+
+// ---- home ----
+(function buildHome(){
+  const g = $('section-grid');
+  SECTIONS.forEach((s,i)=>{
+    const cats = [...new Set(s.bank.map(q=>q.c))].map(c=>CAT_NAMES[c]).join(' + ');
+    const d = document.createElement('div');
+    d.className = 'game-card';
+    d.innerHTML = `<i class="fas ${s.icon}"></i><span class="tag">${esc(s.title)}</span><h3 style="font-size:1rem">${esc(s.sub)}</h3><span class="meta">${esc(cats)} · ${s.bank.length} questions · 5 games</span>`;
+    d.onclick = ()=>openSection(i);
+    g.appendChild(d);
+  });
+})();
+
+function openSection(i){
+  sec = SECTIONS[i]; filter = 'all';
+  $('menu-title').innerText = 'Unit 1 · ' + sec.title;
+  $('menu-sub').innerText = sec.sub + (sec.grammar ? '  |  Grammar: ' + sec.grammar : '');
+  const cats = [...new Set(sec.bank.map(q=>q.c))];
+  const chips = $('chips'); chips.innerHTML = '';
+  [['all','All']].concat(cats.map(c=>[c,CAT_NAMES[c]])).forEach(([k,l])=>{
+    const b = document.createElement('button');
+    b.className = 'chip' + (k==='all'?' on':''); b.innerText = l;
+    b.onclick = ()=>{filter=k;chips.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');updateHint();};
+    chips.appendChild(b);
+  });
+  updateHint();
+  show('menu');
+}
+function pool(){return filter==='all'?sec.bank:sec.bank.filter(q=>q.c===filter);}
+function updateHint(){
+  const n = pool().length;
+  $('hint').innerHTML = '<i class="fas fa-info-circle"></i> ' + Math.min(PER_GAME,n) + ' questions per game, chosen from ' + n + ' — a new set every time. After each answer you\'ll see the reason in Arabic.';
+}
+
+// rotate through the bank so repeated plays don't repeat questions early
+function pickFresh(bank,n,tag){
+  n = Math.min(n,bank.length);
+  const key = 'u1rot:'+sec.id+':'+filter+':'+tag;
+  let seen = [];
+  try{const s=JSON.parse(localStorage.getItem(key)||'null');if(s&&s.len===bank.length&&Array.isArray(s.seen))seen=s.seen;}catch(e){}
+  const all = bank.map((_,i)=>i);
+  const fresh = shuffle(all.filter(i=>!seen.includes(i)));
+  let chosen;
+  if(fresh.length>=n){chosen=fresh.slice(0,n);seen=seen.concat(chosen);}
+  else{const extra=shuffle(all.filter(i=>!fresh.includes(i))).slice(0,n-fresh.length);chosen=shuffle(fresh.concat(extra));seen=extra.slice();}
+  try{localStorage.setItem(key,JSON.stringify({len:bank.length,seen}));}catch(e){}
+  return chosen.map(i=>bank[i]);
+}
+
+function build(t,type){
+  if(type==='TF'){
+    const isTrue = Math.random()>.5;
+    const shown = isTrue ? t.ans : t.wrong[Math.floor(Math.random()*t.wrong.length)];
+    const q = /_{5,}/.test(t.text) ? t.text.replace(/_{5,}/,'[ '+shown+' ]') : t.text+' → '+shown;
+    return {src:t,q,options:['True','False'],answer:isTrue?'True':'False',tf:true,isTrue,shown};
+  }
+  return {src:t,q:t.text,options:shuffle([t.ans,...t.wrong]),answer:t.ans};
+}
+
+function clearTimers(){timers.forEach(clearInterval);timers=[];}
+
+function startGame(id){
+  try{if(audioCtx)audioCtx.resume();}catch(e){}
+  clearTimers();
+  currentGame = id;
+  const full = pool();
+  let bank = full, tag = 'all';
+  if(id===2||id===3){
+    const short = full.filter(q=>[q.ans,...q.wrong].every(o=>o.length<=24));
+    if(short.length>=6){bank=short;tag='short';}
+  }
+  const type = id===4?'TF':'MCQ';
+  qs = pickFresh(bank,PER_GAME,tag+id).map(t=>build(t,type));
+  qi=0;score=0;lives=3;mistakes=[];
+  $('g-title').innerText = GAME_NAMES[id]+' — '+sec.title+(filter==='all'?'':' · '+CAT_NAMES[filter]);
+  $('score').innerText='0';
+  $('lives').innerText = id===5?'❤️❤️❤️':'';
+  $('panel').classList.toggle('challenge',id===5);
+  show('game-screen');
+  loadQ();
+}
+
+function loadQ(){
+  clearTimers();
+  if(qi>=qs.length||(currentGame===5&&lives<=0)){endGame();return;}
+  const d = qs[qi];
+  locked=false;
+  $('q-count').innerText='Question '+(qi+1)+' / '+qs.length;
+  $('bar').style.width=(qi/qs.length*100)+'%';
+  const qt=$('q-type'); qt.className='q-type '+d.src.c; qt.innerText=CAT_NAMES[d.src.c]+(d.tf?' · True or False':'');
+  $('question').innerText=d.q;
+  $('question').dir = 'auto';
+  $('feedback').className='feedback';
+  const opts=$('options'),bub=$('bubbles'),tar=$('targets');
+  opts.style.display='none';bub.style.display='none';tar.style.display='none';
+  opts.innerHTML='';bub.innerHTML='';tar.innerHTML='';
+  if(currentGame===2){bub.style.display='block';runBubbles(d);}
+  else if(currentGame===3){tar.style.display='block';runTargets(d);}
+  else{
+    opts.style.display='grid';
+    const long = d.options.some(o=>o.length>26);
+    opts.className='options'+(long?' long':'');
+    d.options.forEach(o=>{
+      const b=document.createElement('button');
+      b.className='opt';b.innerText=o;b.dir='auto';
+      b.onclick=()=>answer(o,b);
+      opts.appendChild(b);
+    });
+  }
+}
+
+function answer(choice){
+  if(locked)return;
+  locked=true;
+  clearTimers();
+  const d=qs[qi];
+  const ok = choice===d.answer;
+  if(ok){score++;sound('ok');}
+  else{
+    sound('bad');
+    if(currentGame===5)lives--;
+    mistakes.push(d);
+  }
+  $('score').innerText=score;
+  if(currentGame===5)$('lives').innerText='❤️'.repeat(Math.max(0,lives))+'🖤'.repeat(3-Math.max(0,lives));
+  // mark buttons
+  $('options').querySelectorAll('.opt').forEach(b=>{
+    b.disabled=true;
+    if(b.innerText===d.answer)b.classList.add('correct');
+    else if(b.innerText===choice&&!ok)b.classList.add('wrong');
+    else b.classList.add('dim');
+  });
+  // moving games: freeze and highlight
+  document.querySelectorAll('#bubbles .bubble,#targets .target').forEach(el=>{
+    if(el.dataset.v===d.answer){el.style.background='var(--success)';el.style.color='#fff';el.style.textShadow='none';}
+    else if(el.dataset.v===choice&&!ok){el.style.background='var(--danger)';el.style.color='#fff';el.style.textShadow='none';}
+    else el.style.opacity='.35';
+  });
+  showFeedback(d,ok,choice);
+}
+
+function showFeedback(d,ok,choice){
+  const fb=$('feedback');
+  fb.className='feedback show '+(ok?'ok':'bad');
+  let title = ok ? '✅ إجابة صحيحة! أحسنت' : (choice==='__missed'?'⏳ فاتتك الإجابة الصحيحة!':'❌ إجابة خاطئة');
+  let ansHtml, why = d.src.exp;
+  if(d.tf){
+    ansHtml = d.isTrue
+      ? 'العبارة <b>صحيحة (True)</b> — الكلمة المناسبة هي: <span>'+esc(d.src.ans)+'</span>'
+      : 'العبارة <b>خاطئة (False)</b> — الصواب: <span>'+esc(d.src.ans)+'</span> وليس <span style="color:#b91c1c">'+esc(d.shown)+'</span>';
+  } else {
+    ansHtml = 'الإجابة الصحيحة: <span>'+esc(d.answer)+'</span>';
+  }
+  $('fb-title').innerText=title;
+  $('fb-ans').innerHTML=ansHtml;
+  $('fb-why').innerHTML='<b>السبب:</b> '+esc(why);
+  const last = qi+1>=qs.length || (currentGame===5&&lives<=0);
+  $('fb-next').innerHTML = last ? 'النتيجة <i class="fas fa-flag-checkered"></i>' : 'التالي <i class="fas fa-arrow-left"></i>';
+  setTimeout(()=>fb.scrollIntoView({behavior:'smooth',block:'nearest'}),60);
+}
+
+function nextQuestion(){qi++;loadQ();}
+
+function runBubbles(d){
+  const area=$('bubbles');
+  const w=area.clientWidth,h=area.clientHeight;
+  const seg=w/d.options.length;
+  const base=Math.max(50,Math.min(seg-12,w<480?82:115));
+  shuffle(d.options).forEach((o,i)=>{
+    const b=document.createElement('div');
+    b.className='bubble';b.innerText=o;b.dataset.v=o;
+    const size=base-Math.random()*base*.1;
+    b.style.width=b.style.height=size+'px';
+    const minL=i*seg+4;let maxL=(i+1)*seg-size-4;if(maxL<minL)maxL=minL;
+    b.style.left=(minL+Math.random()*(maxL-minL))+'px';
+    let top=-100-Math.random()*150;b.style.top=top+'px';
+    b.addEventListener('pointerdown',e=>{e.preventDefault();answer(o);});
+    area.appendChild(b);
+    const sp=.45+Math.random()*.5;
+    const iv=setInterval(()=>{top+=sp;b.style.top=top+'px';if(top>h){clearInterval(iv);if(o===d.answer&&!locked)answer('__missed');}},20);
+    timers.push(iv);
+  });
+}
+
+function runTargets(d){
+  const area=$('targets');
+  const w=area.clientWidth,h=area.clientHeight;
+  const lane=h/d.options.length,th=w<480?46:58;
+  shuffle(d.options).forEach((o,i)=>{
+    const t=document.createElement('div');
+    t.className='target';t.innerText=o;t.dataset.v=o;
+    t.style.top=(i*lane+Math.max(0,(lane-th)/2))+'px';
+    let left=-180-Math.random()*220;t.style.left=left+'px';
+    t.addEventListener('pointerdown',e=>{e.preventDefault();answer(o);});
+    area.appendChild(t);
+    const sp=.6+Math.random()*.6;
+    const iv=setInterval(()=>{left+=sp;t.style.left=left+'px';if(left>w){clearInterval(iv);if(o===d.answer&&!locked)answer('__missed');}},20);
+    timers.push(iv);
+  });
+}
+
+function quitGame(){clearTimers();locked=true;show('menu');}
+
+function endGame(){
+  clearTimers();
+  const total = currentGame===5 ? qi : qs.length;
+  const played = Math.max(total, 1);
+  const pct = score/played;
+  $('res-title').innerText = currentGame===5&&lives<=0 ? 'Out of lives! 💔' : (pct>=.9?'Excellent! 🌟':pct>=.6?'Well done! 👏':'Keep practising! 💪');
+  $('stars').innerText = pct>=.9?'⭐⭐⭐':pct>=.6?'⭐⭐':pct>0?'⭐':'';
+  $('final-score').innerText=score;
+  $('final-total').innerText=currentGame===5?qi:qs.length;
+  $('bar').style.width='100%';
+  const m=$('mistakes');
+  if(!mistakes.length){m.innerHTML='<div style="color:var(--success);font-weight:800;font-size:1.3rem;text-align:center">Excellent! No mistakes. 🌟</div>';}
+  else{
+    m.innerHTML='<div class="ar" style="font-weight:800;margin-bottom:10px;color:var(--dark)">راجع أخطاءك:</div>'+mistakes.map(d=>`<div class="mistake"><div class="q" dir="auto">${esc(d.src.text.replace(/_{5,}/,'_____'))}</div><div class="a" dir="auto"><i class="fas fa-check"></i> ${esc(d.src.ans)}</div><div class="why">${esc(d.src.exp)}</div></div>`).join('');
+  }
+  if(pct>=.6)sound('win');
+  show('results');
+}
+</script>
+</body>
+</html>
